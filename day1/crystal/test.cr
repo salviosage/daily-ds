@@ -1,25 +1,29 @@
-# testing  first unique char from string  in main.cr
+# testing first unique char from string in main.cr
 require "./main.cr"
+require "spec"
 
-# making test case an array 
+# Define test cases as a hash with input and expected output
+test_cases = {
+  "leetcode"                                                       => 0,
+  "loveleetcode"                                                   => 2,
+  "aabb"                                                           => -1,
+  "aabbcc"                                                         => -1,
+  "aabbccddeeffgghh"                                               => -1,
+  "aabbccddeeffgghhiijjkkllmmnnooppqqrrssttuuvvwwxxyyzz"           => -1,
+  "aabbccddeeffgghhiijjkkllmmnnooppqqrrssttuuvvwwxxyyzz1234567890" => 52,
+}
 
-test_case = [
-  "leetcode",
-  "loveleetcode",
-  "aabb",
-  "aabbcc",
-  "aabbccddeeffgghh",
-  "aabbccddeeffgghhiijjkkllmmnnooppqqrrssttuuvvwwxxyyzz",
-  "aabbccddeeffgghhiijjkkllmmnnooppqqrrssttuuvvwwxxyyzz1234567890"
-]
+describe "Sanity Check" do
+  it "should pass this simple test" do
+    (1 + 1).should eq(2)
+  end
+end
 
-
-
-# use until to get all test cases done 
-test_case.each do |test|
-  # call the method from main.cr
-  result = test.first_uniq_char
-  # print the result
-  puts "The first unique character in '#{test}' is at index #{result}"
-
+describe "First Unique Character" do
+  test_cases.each do |input, expected|
+    it "returns #{expected} for input '#{input}'" do
+      result = input.first_uniq_char
+      result.should eq(expected)
+    end
+  end
 end

@@ -14,12 +14,9 @@ const testCases = [
 const runTests = () => {
     testCases.forEach(({ input, expected }, index) => {
         const result = firstUniqueChar(input);
-        if (result === expected) {
-            console.log(`Test case ${index + 1} passed.`);
-        } else {
-            console.error(`Test case ${index + 1} failed: expected ${expected}, got ${result}`);
-        }
+        console.assert((result === expected) , `Test case ${index + 1} failed: expected ${expected}, got ${result}`);
     });
+    console.log("All tests passed");
 }
 runTests();
 
