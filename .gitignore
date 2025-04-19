@@ -1,0 +1,39 @@
+# all python generated files
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.egg-info/
+*.egg
+*.whl
+*.mypy_cache/
+*.pytest_cache/
+*.coverage
+*.cover
+*.hypothesis/
+
+
+# all cpp generated files
+*.o
+*.so
+*.a
+*.out
+*.exe
+*.dSYM
+*.dSYM/
+
+# all ts generated files
+*.js
+*.js.map
+*.tsbuildinfo
+
+
+# all rust generated files
+*.rs.bk
+*.rs.bk.*
+*.rs.bk.*
+*.rs.bk.*.*
+
+# all go generated files
+*.mod
+*.sum

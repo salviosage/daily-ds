@@ -1,34 +1,57 @@
-# 🧠 Day 1 Challenge: "First Unique Character"
+# 🧠 Day 3 Challenge: "Design a Stack With Min Operation"
 
 ## 🗒️ Problem Statement
-Given a string, find the index of the first non-repeating character in it. If it doesn't exist, return `-1`.
+Design a stack that supports push, pop, top, and retrieving the minimum element in constant time.
 
-### 🧪 Constraints
-- The string contains only lowercase English letters.
-- Length of the string: `1 <= s.length <= 10⁵`
+---
 
-### ✅ Requirements
-**Input**  
-A string `s`
+## 🔧 API Specification
+Implement a `MinStack` class with the following operations:
 
-**Output**  
-Integer: index of the first unique character, or `-1` if none exists.
+- `push(val: int)` – Push element `val` onto the stack.
+- `pop()` – Removes the element on the top of the stack.
+- `top() -> int` – Get the top element.
+- `getMin() -> int` – Retrieve the minimum element in the stack.
 
-### Example
+---
+
+## 📥 Input/Output Examples
 ```text
-Input: "leetcode"
-Output: 0
-
-Input: "loveleetcode"
-Output: 2
-
-Input: "aabb"
-Output: -1
+Input:
+MinStack stack = new MinStack();
+stack.push(-2);
+stack.push(0);
+stack.push(-3);
+stack.getMin(); // Returns -3
+stack.pop();
+stack.top();    // Returns 0
+stack.getMin(); // Returns -2
 ```
 
-## 📂 Folder Structure for Each Language
-```go
-day1/
+## 🎯 Constraints
+All `val` values are integers.
+
+Methods `pop`, `top`, and `getMin` will always be called on non-empty stacks.
+
+Operations will not exceed 10⁴ in a single run.
+
+---
+
+## 📊 Performance Metrics
+| Language      | Max Runtime | Max Memory |
+|---------------|-------------|------------|
+| Rust          | < 30ms      | < 5MB      |
+| C++           | < 30ms      | < 5MB      |
+| Crystal       | < 40ms      | < 6MB      |
+| Go            | < 35ms      | < 5MB      |
+| TypeScript    | < 50ms      | < 8MB      |
+| Python        | < 80ms      | < 10MB     |
+
+---
+
+## 📂 Folder Structure
+```plaintext
+day3/
 ├── rust/
 ├── cpp/
 ├── crystal/
@@ -36,23 +59,17 @@ day1/
 ├── typescript/
 └── python/
 ```
-Each language folder will include:
 
-- `main.(ext)` — main implementation file
-- `test.(ext)` — unit tests
-- `README.md` — task instructions
+Each folder will include:
 
-## 📊 Performance Metrics
-| Language   | Max Runtime | Max Memory |
-|------------|-------------|------------|
-| Rust       | < 30ms      | < 5MB      |
-| C++        | < 30ms      | < 5MB      |
-| Crystal    | < 40ms      | < 6MB      |
-| Go         | < 35ms      | < 5MB      |
-| TypeScript | < 50ms      | < 8MB      |
-| Python     | < 80ms      | < 10MB     |
+- `main.(ext)` — implementation file
+- `test.(ext)` — test cases
+- `README.md` — instructions and usage
 
-## 🧪 How to Test
+---
+
+## 🧪 How to Run Tests
+
 ### 🦀 Rust
 ```bash
 cargo test
@@ -65,7 +82,7 @@ crystal spec
 
 ### 🧊 C++
 ```bash
-g++ -std=c++17 test.cpp -o test && ./test
+g++ test.cpp -o test && ./test
 ```
 
 ### 🌀 Go
@@ -83,3 +100,7 @@ npx ts-node test.ts
 ```bash
 python3 -m unittest test.py
 ```
+
+---
+
+✅ This task tests your understanding of stack manipulation and auxiliary data structures, like using a second stack to track minimums. The implementations and results will follow in the next automation turn.

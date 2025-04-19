@@ -1,30 +1,44 @@
 # 🧠 Day 1 Challenge: "First Unique Character"
 
+# 🧠 Day 2 Challenge: "Top K Frequent Elements"
+
 ## 🗒️ Problem Statement
-Given a string, find the index of the first non-repeating character in it. If it doesn't exist, return `-1`.
+Given an integer array `nums` and an integer `k`, return the `k` most frequent elements. You may return the answer in any order.
 
-### 🧪 Constraints
-- The string contains only lowercase English letters.
-- Length of the string: `1 <= s.length <= 10⁵`
+### 📥 Input
+- `nums`: List of integers, e.g., `[1,1,1,2,2,3]`
+- `k`: Integer indicating how many frequent elements to return
 
-### ✅ Requirements
-**Input**  
-A string `s`
+### 📤 Output
+- List of `k` most frequent elements (order doesn't matter)
 
-**Output**  
-Integer: index of the first unique character, or `-1` if none exists.
+---
 
-### Example
+## 🧪 Examples
 ```text
-Input: "leetcode"
-Output: 0
+Input: nums = [1,1,1,2,2,3], k = 2
+Output: [1,2]
 
-Input: "loveleetcode"
-Output: 2
-
-Input: "aabb"
-Output: -1
+Input: nums = [1], k = 1
+Output: [1]
 ```
+
+## 🧠 Constraints
+1 <= nums.length <= 10⁵
+
+-10⁴ <= nums[i] <= 10⁴
+
+k is in the range 1 <= k <= unique elements in nums
+
+📊 Performance Metrics
+Language	Max Runtime	Max Memory
+Rust	< 40ms	< 6MB
+C++	< 40ms	< 6MB
+Crystal	< 50ms	< 7MB
+Go	< 45ms	< 6MB
+TypeScript	< 60ms	< 8MB
+Python	< 100ms	< 10MB
+
 
 ## 📂 Folder Structure for Each Language
 ```go
@@ -42,15 +56,6 @@ Each language folder will include:
 - `test.(ext)` — unit tests
 - `README.md` — task instructions
 
-## 📊 Performance Metrics
-| Language   | Max Runtime | Max Memory |
-|------------|-------------|------------|
-| Rust       | < 30ms      | < 5MB      |
-| C++        | < 30ms      | < 5MB      |
-| Crystal    | < 40ms      | < 6MB      |
-| Go         | < 35ms      | < 5MB      |
-| TypeScript | < 50ms      | < 8MB      |
-| Python     | < 80ms      | < 10MB     |
 
 ## 🧪 How to Test
 ### 🦀 Rust
